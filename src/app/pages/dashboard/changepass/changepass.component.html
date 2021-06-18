@@ -1,0 +1,31 @@
+<header class="jumbotron">
+    <h1 class="text-center">Change Password</h1>
+</header>
+
+    <form [formGroup]="myForm" (ngSubmit)="chpass()">
+        <div *ngIf="errMsg" class="alert alert-danger">
+            {{errMsg}}
+        </div>
+    <div class="form-group">
+        <label>Old password</label>
+        <input type="password" class="form-control" formControlName="op">
+
+    </div>
+
+    <div class="form-group">
+        <label>New password</label>
+        <input type="password" class="form-control" formControlName="np">
+        
+    </div>
+
+
+    <div class="form-group">
+        <label>Confirm password</label>
+        <input type="password" class="form-control" formControlName="cp">
+        
+    </div>
+
+    <input type="submit" value ="submit" class="btn btn-success" [disabled]="myForm.invalid">
+</form>  
+
+
